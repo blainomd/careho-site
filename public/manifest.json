@@ -1,0 +1,11 @@
+{
+  "name": "careho.me",
+  "short_name": "careho.me",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#1B2A4A",
+  "background_color": "#F8FAF9",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
