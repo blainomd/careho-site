@@ -92,11 +92,15 @@ export default function Home() {
     if (!email || submitting) return;
     setSubmitting(true);
     try {
-      await fetch("https://api.solvinghealth.com/waitlist", {
+      const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, product: "careho.me", source: "waitlist-form" }),
+        body: JSON.stringify({ email, source: "careho-site" }),
       });
+      if (!res.ok) {
+        const data = await res.json();
+        console.error("[careho waitlist] error:", data.error);
+      }
     } catch {
       // fail silently — show confirmation regardless
     }
